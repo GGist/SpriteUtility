@@ -20,8 +20,8 @@ Tags:
 ------
 ***These can only be used with the start command***<br \>
 **-l "path/manifest.txt"** loads the sprite names contained in manifest.txt from the path/ directory<br \>
-**-g "path/spritesheet.format" (r, g, b)** generates sprites from spritesheet.format using (r, g, b) as the bounding
-color<br \>
+**-g "path/spritesheet.format" optional: (r, g, b)** generates sprites from spritesheet.format and if (r, g, b)
+is not specified auto detect will be used which uses the top left pixel's color as the bounding color<br \>
 **-fv** flips the currently loaded sprites vertically<br \>
 **-fh** flips the currently loaded sprites horizontally<br \>
 **-a (r, g, b)** replaces the color (r, g, b) of the currently loaded sprites with an alpha mask<br \>

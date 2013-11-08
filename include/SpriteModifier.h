@@ -29,6 +29,8 @@ class SpriteModifier
         bool generateSprites(std::string filePath, sf::Color fillColor);
         //Generates sprites starting from the top left of the file going row
         //by row using the fillColor to determine where a sprites bounds are
+        //Passing in sf::Color::Transparent for the fillColor will enable auto
+        //detect background color which uses a pixel from the top left as the fillColor
         //Returns false if the file could not be found
         bool flipHorizontally();
         //Flips the sprites in the sprite buffer horizontally

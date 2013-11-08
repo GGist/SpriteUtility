@@ -52,7 +52,7 @@ bool CommandInfo::setTag(Tag param, sf::Color mask)
 
 bool CommandInfo::setClear()
 {
-    if (command != EMPTY)
+    if (command != NONE)
         return false;
 
     clearFlag = true;
@@ -92,6 +92,8 @@ void CommandInfo::executeCommands(SpriteModifier& sMod)
     case SAVE:
         sMod.saveSprites(saveFileName);
         break;
+    case NONE:
+        break;
     }
 
     for (int i = 0; i < MAX_TAGS; ++i) {
@@ -105,6 +107,8 @@ void CommandInfo::executeCommands(SpriteModifier& sMod)
             break;
         case ALPHA:
             sMod.creatAlphaMask(aMask);
+            break;
+        case EMPTY:
             break;
         }
     }

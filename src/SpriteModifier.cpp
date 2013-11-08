@@ -52,10 +52,13 @@ bool SpriteModifier::loadSprites(std::string textFile)
 
 bool SpriteModifier::generateSprites(string filePath, sf::Color boundsColor)
 {
-    static int test = 0;
     sf::Image spriteSheet;
     if (!spriteSheet.loadFromFile(filePath))
         return false;
+
+    //Check for auto detect color
+    if (boundsColor == sf::Color::Transparent)
+        boundsColor = spriteSheet.getPixel(0, 0);
 
     queue<Pixel_Info> tempPixels;
     sf::Vector2u currPixel;
@@ -103,10 +106,14 @@ queue<SpriteModifier::Pixel_Info> SpriteModifier::floodFind(sf::Image& spriteShe
             //Mark the pixel
             spriteSheet.setPixel(temp.x, temp.y, boundsColor);
 
-            currVectors.push(sf::Vector2u(temp.x - 1, temp.y));
-            currVectors.push(sf::Vector2u(temp.x + 1, temp.y));
-            currVectors.push(sf::Vector2u(temp.x, temp.y - 1));
-            currVectors.push(sf::Vector2u(temp.x, temp.y + 1));
+            if (temp.x > 0)
+                currVectors.push(sf::Vector2u(temp.x - 1, temp.y));
+            if (temp.x < spriteSheet.getSize().x - 1)
+                currVectors.push(sf::Vector2u(temp.x + 1, temp.y));
+            if (temp.y > 0)
+                currVectors.push(sf::Vector2u(temp.x, temp.y - 1));
+            if (temp.y < spriteSheet.getSize().y - 1)
+                currVectors.push(sf::Vector2u(temp.x, temp.y + 1));
         }
     }
 
@@ -141,7 +148,7 @@ bool SpriteModifier::flipHorizontally()
     if (spriteBuffer.empty())
         return false;
 
-    for (int i = 0; i < spriteBuffer.size(); ++i)
+    for (unsigned int i = 0; i < spriteBuffer.size(); ++i)
         spriteBuffer[i].flipHorizontally();
 
     return true;
@@ -152,7 +159,7 @@ bool SpriteModifier::flipVertically()
     if (spriteBuffer.empty())
         return false;
 
-    for (int i = 0; i < spriteBuffer.size(); ++i)
+    for (unsigned int i = 0; i < spriteBuffer.size(); ++i)
         spriteBuffer[i].flipVertically();
 
     return true;
@@ -163,7 +170,7 @@ bool SpriteModifier::creatAlphaMask(sf::Color purgedColor)
     if (spriteBuffer.empty())
         return false;
 
-    for (int i = 0; i < spriteBuffer.size(); ++i)
+    for (unsigned int i = 0; i < spriteBuffer.size(); ++i)
         spriteBuffer[i].createMaskFromColor(purgedColor);
 
     return true;
@@ -173,7 +180,7 @@ bool SpriteModifier::saveSprites(string filePath)
 {
     string temp;
 
-    for (int i = 0; i < spriteBuffer.size(); ++i) {
+    for (unsigned int i = 0; i < spriteBuffer.size(); ++i) {
         if (!spriteBuffer[i].saveToFile(filePath + "_" + to_string(i) + SAVE_FORMAT))
             return false;
     }
