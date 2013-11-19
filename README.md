@@ -9,12 +9,17 @@ or modify. This game utilizes the system, window, and graphics modules of SFML 2
 documentation see the header files or main.cpp.<br \><br \>
 
 This code is licensed under the MIT License so you can do quite a bit with it. The license
-has been included in the root directory of this project if you would like to view it.<br \>
+has been included in the root directory of this project if you would like to view it.
+
+Required DLLs:
+--------------
+SFML 2.0 (or later) DLLs
+
 Commands:
 --------
 **start** accepts any of the tags below that let you generater/load in and or modify sprites<br \>
 **save "path/base_name"** saves the currently loaded sprites out to path/base_name_i.format<br \>
-**clear** clears the buffer that the currently loaded sprites are being stored in<br \>
+**clear** clears the buffer that the currently loaded sprites are being stored in
 
 Tags:
 ------
