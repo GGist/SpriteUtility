@@ -55,3 +55,7 @@ want done. When we are satisfied we can use the **save** command and specify a *
 after pressing enter we can go in to where we told it to save our sprites and see the finished product
 
 ![alt text](https://raw.github.com/GGist/Sprite_Utility/master/example/Finished.png "Step 2 Directory")
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GGist/spriteutility/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
