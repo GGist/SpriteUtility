@@ -42,22 +42,22 @@ Example:
 -------
 Lets go ahead and take the below image as the sprite sheet that we want to extract individual sprites from.
 
-![alt text](https://raw.github.com/GGist/Sprite_Utility/master/example/Robot_Black.png "Sprite Sheet")
+![alt text](https://raw.github.com/GGist/SpriteUtility/master/example/Robot_Black.png "Sprite Sheet")
 
 In order to use this sprite sheet with the program, put it in the directory of your choice. I have put mine
 in the data folder that the Makefile creates. Start the program and enter the **start** command followed by
 the **-g** tag with the **path/spritesheet.format**. An optional parameter allows you to specify the
 **(r, g, b)** components of the background color.
 
-![alt text](https://raw.github.com/GGist/Sprite_Utility/master/example/Step1.png "Step 1")
+![alt text](https://raw.github.com/GGist/SpriteUtility/master/example/Step1.png "Step 1")
 
 After entering this command the program will cut out our sprites and keep them stored in memory.
 At this point, we can load in other spritesheets and they will be stored alongside our current sprites
 in memory. Any flipping or alpha masks we specify will be applied to all of the sprites currently loaded.
 Once we are done, we can type the **save** command followed by the **path/base_name** parameter.
 
-![alt text](https://raw.github.com/GGist/Sprite_Utility/master/example/Step2.png "Step 2")
+![alt text](https://raw.github.com/GGist/SpriteUtility/master/example/Step2.png "Step 2")
 
 After entering this command, the program will start saving our images and will be available for us in an instant.
 
-![alt text](https://raw.github.com/GGist/Sprite_Utility/master/example/Finished.png "Sprite Directory")
+![alt text](https://raw.github.com/GGist/SpriteUtility/master/example/Finished.png "Sprite Directory")
