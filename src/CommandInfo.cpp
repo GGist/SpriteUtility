@@ -73,24 +73,27 @@ void CommandInfo::reset()
     saveFileName.clear();
 }
 
-void CommandInfo::executeCommands(SpriteModifier& sMod)
+bool CommandInfo::executeCommands(SpriteModifier& sMod)
 {
     if (clearFlag) {
         sMod.clearSprites();
         clearFlag = false;
-        return;
+        return true;
     }
 
     switch (command)
     {
     case GENERATE:
-        sMod.generateSprites(commFileName, gMask);
+        if (!sMod.generateSprites(commFileName, gMask))
+	  return false;
         break;
     case LOAD:
-        sMod.loadSprites(commFileName);
+        if (!sMod.loadSprites(commFileName))
+	  return false;
         break;
     case SAVE:
-        sMod.saveSprites(saveFileName);
+        if (!sMod.saveSprites(saveFileName))
+	  return false;
         break;
     case NONE:
         break;
@@ -112,4 +115,6 @@ void CommandInfo::executeCommands(SpriteModifier& sMod)
             break;
         }
     }
+
+    return true;
 }

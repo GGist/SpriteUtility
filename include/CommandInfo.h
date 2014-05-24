@@ -47,7 +47,7 @@ class CommandInfo
         //Returns false if any commands are flags were set beforehand
         void reset();
         //This resets the current commands/flags that have been set
-        void executeCommands(SpriteModifier& sMod);
+        bool executeCommands(SpriteModifier& sMod);
         //Executes the commands and flags that have been specified
 
     private:

@@ -70,8 +70,10 @@ bool SpriteModifier::generateSprites(string filePath, sf::Color boundsColor)
                 tempPixels = floodFind(spriteSheet, boundsColor, currPixel);
                 currImage = generateImage(tempPixels);
                 //Ignore sprites below the tolerance threshold
-                if (!(currImage.getSize().x < spriteTolerance.x) && !(currImage.getSize().y < spriteTolerance.y))
+                if (!(currImage.getSize().x < spriteTolerance.x) && 
+		    !(currImage.getSize().y < spriteTolerance.y)) {
                     spriteBuffer.push_back(currImage);
+		}
             }
             ++currPixel.x;
         }
@@ -102,7 +104,8 @@ queue<SpriteModifier::Pixel_Info> SpriteModifier::floodFind(sf::Image& spriteShe
             maxY = (temp.y > maxY) ? temp.y : maxY;
 
             //Grab pixel info
-            currPixels.push(Pixel_Info(spriteSheet.getPixel(temp.x, temp.y), temp));
+            currPixels.push(Pixel_Info(spriteSheet.getPixel(temp.x, temp.y), 
+				       temp));
             //Mark the pixel
             spriteSheet.setPixel(temp.x, temp.y, boundsColor);
 
@@ -118,7 +121,8 @@ queue<SpriteModifier::Pixel_Info> SpriteModifier::floodFind(sf::Image& spriteShe
     }
 
     //Used to determine dimensions when re-creating image with the pixels
-    spriteBounds.push_back(sf::IntRect(minX, minY, (maxX - minX + 1), (maxY - minY + 1)));
+    spriteBounds.push_back(sf::IntRect(minX, minY, (maxX - minX + 1), 
+				       (maxY - minY + 1)));
 
     return currPixels;
 }
@@ -181,7 +185,8 @@ bool SpriteModifier::saveSprites(string filePath)
     string temp;
 
     for (unsigned int i = 0; i < spriteBuffer.size(); ++i) {
-        if (!spriteBuffer[i].saveToFile(filePath + "_" + to_string(i) + SAVE_FORMAT))
+        if (!spriteBuffer[i].saveToFile(filePath + "_" + to_string(i) + 
+					SAVE_FORMAT))
             return false;
     }
 
