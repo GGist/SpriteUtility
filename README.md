@@ -25,18 +25,18 @@ in the same directory, but make sure to update the Makefile.
 Commands:
 --------
 **start** accepts any of the tags below that let you generater/load in and or modify sprites<br \>
-**save <path/base_name>** saves the currently loaded sprites out to *path/base_name_i.format*<br \>
+**save \<path/base_name\>** saves the currently loaded sprites out to *path/base_name_i.format*<br \>
 **clear** clears the buffer that the currently loaded sprites are being stored in<br \>
 
 Tags:
 ------
 ***These can only be used with the start command***<br \>
-**-l <path/manifest.txt>** loads the sprite names contained in *manifest.txt* from the *path/directory*<br \>
-**-g <path/spritesheet.format> [(r, g, b)]** generates sprites from *spritesheet.format* and if *(r, g, b)*
+**-l \<path/manifest.txt\>** loads the sprite names contained in *manifest.txt* from the *path/directory*<br \>
+**-g \<path/spritesheet.format\> [(r, g, b)]** generates sprites from *spritesheet.format* and if *(r, g, b)*
 is not specified auto detect will be used which uses the top left pixel's color as the bounding color<br \>
 **-fv** flips the currently loaded sprites vertically<br \>
 **-fh** flips the currently loaded sprites horizontally<br \>
-**-a <(r, g, b)>** replaces the color *(r, g, b)* of the currently loaded sprites with an alpha mask<br \>
+**-a \<(r, g, b)\>** replaces the color *(r, g, b)* of the currently loaded sprites with an alpha mask<br \>
 
 Example:
 -------
