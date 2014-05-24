@@ -3,8 +3,7 @@ Sprite Utility
 This utility was created to aid me in the process of getting individual sprites from sprite sheets
 so that they could be used as animations in the game I was developing. I realized that this tool
 was so useful to me that I cleaned up the UI a little bit and decided to post it for anyone to use
-or modify. This game utilizes the system, window, and graphics modules of SFML 2.0 or later. For more
-documentation see the header files or main.cpp.<br \><br \>
+or modify. For implementation specific documentation, check out the source code comments.<br \><br \>
 
 This code is licensed under the MIT License so you can do quite a bit with it. The license
 has been included in the root directory of this project if you would like to view it.
@@ -17,7 +16,7 @@ have included the pre-compiled 64-bit static libraries for Windows users. If you
 do is run the following commands:
 ```
 git clone https://github.com/GGist/SpriteUtility SpriteUtility
-cd SpriteUtility && make
+cd SpriteUtility && <make or mingw-make>
 ```
 For all other environments, you will have to get the static libraries yourself, put them in the 
 depend\lib\SFML directory, and then run make. If you wish to use SFML shared libraries, put it
@@ -26,7 +25,7 @@ in the same directory, but make sure to update the Makefile.
 Commands:
 --------
 **start** accepts any of the tags below that let you generater/load in and or modify sprites<br \>
-**save [path/base_name]** saves the currently loaded sprites out to *path/base_name_i.format*<br \>
+**save <path/base_name>** saves the currently loaded sprites out to *path/base_name_i.format*<br \>
 **clear** clears the buffer that the currently loaded sprites are being stored in<br \>
 
 Tags:
